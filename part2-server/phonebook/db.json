@@ -1,11 +1,6 @@
 {
   "persons": [
     {
-      "name": "Arto Hellas",
-      "number": "040-123456",
-      "id": "1"
-    },
-    {
       "name": "Ada Lovelace",
       "number": "39-44-5323523",
       "id": "2"
@@ -21,14 +16,29 @@
       "id": "4"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Shirley",
       "number": "5878903750"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "add new contacts...",
       "number": "add new numbers..."
+    },
+    {
+      "id": "7",
+      "name": "",
+      "number": ""
+    },
+    {
+      "id": "8",
+      "name": "Fang",
+      "number": "add new numbers..."
+    },
+    {
+      "id": "9",
+      "name": "kang",
+      "number": "586"
     }
   ]
 }
