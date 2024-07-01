@@ -41,7 +41,9 @@ const App = () => {
   }
 
   const deletePersons = (id) => {
-    personService
+    const personID = persons.find(person => person.id === id);
+    if (personID && window.confirm(`Delete ${personID.name}?`)) {
+      personService
       .deletePerson(id)
       .then(() => {
         setPersons(persons.filter(person => person.id !== id));
@@ -49,6 +51,7 @@ const App = () => {
       .catch(error => {
         console.error('Error deleting person:', error);
       });
+    }
   }
 
   const handleNameChange = (event) => {
