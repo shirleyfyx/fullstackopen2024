@@ -64,8 +64,8 @@ const App = () => {
       <ul>
         {notesToShow.map(note => (
           <Note
-            key={note.id} // Ensure each key is unique
-            note={note} // Pass the note object to the Note component
+            key={note.id} 
+            note={note} 
             toggleImportance={() => toggleImportanceOf(note.id)}
           />
         ))}
