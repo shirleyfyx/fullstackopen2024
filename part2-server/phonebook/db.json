@@ -1,34 +1,24 @@
 {
   "persons": [
     {
-      "name": "Ada Lovelace",
-      "number": "39-44-5323523",
-      "id": "2"
-    },
-    {
       "name": "Dan Abramov",
-      "number": "12-43-234345",
+      "number": "hi",
       "id": "3"
     },
     {
-      "name": "Mary Poppendieck",
-      "number": "39-23-6423122",
-      "id": "4"
-    },
-    {
-      "id": "5",
-      "name": "Shirley",
-      "number": "5878903750"
-    },
-    {
-      "id": "6",
+      "id": "4",
       "name": "add new contacts...",
       "number": "add new numbers..."
     },
     {
-      "id": 7,
-      "name": "hhh",
+      "id": "44df",
+      "name": "Kang",
       "number": ""
+    },
+    {
+      "id": "4dc7",
+      "name": "Shirley",
+      "number": "add new numbers..."
     }
   ]
 }

@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
-import Filter from './filter'
+import Filter from './components/filter'
 import personService from './services/persons'
+import Notification from './components/Notification'
 
 const App = () => {
   const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('add new contacts...')
   const [newNumber, setNewNumber] = useState('add new numbers...')
   const [filterName, setFilterName] = useState('')
+  const [notification, setNotification] = useState(null)
 
   useEffect(() => {
     console.log('effect')
@@ -23,8 +25,7 @@ const App = () => {
     event.preventDefault()
     const personObject = {
       name: newName,
-      number: newNumber,
-      id: persons.length + 1
+      number: newNumber
     }
 
     const existingPerson = persons.find(person => person.name === newName);
@@ -39,6 +40,12 @@ const App = () => {
             setPersons(persons.map(person => person.id !== existingPerson.id ? person : returnedPerson));
             setNewName('');
             setNewNumber('');
+            setNotification(
+              `Update '${returnedPerson.name}'`
+            )
+            setTimeout(() => {
+              setNotification(null)
+            }, 5000)
         })
         .catch(error => {
           console.error('Error updating person:', error);
@@ -52,6 +59,12 @@ const App = () => {
           setPersons(persons.concat(returnedPerson))
           setNewName('')
           setNewNumber('')
+          setNotification(
+            `Add '${returnedPerson.name}'`
+          )
+          setTimeout(() => {
+            setNotification(null)
+          }, 5000)
         })
     }
   }
@@ -88,6 +101,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={notification} />
       <form onSubmit={addNewNames}>
         <div>
           filter shown with <input value={filterName} onChange={handleFilterChange}/>
